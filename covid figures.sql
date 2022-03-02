@@ -6,10 +6,10 @@ USE covid_canada;
 SELECT 
 	prname, 
 	date, 
-    numdeaths, 
-    numtotal , 
+	numdeaths, 
+	numtotal , 
 	numtoday,
-    numdeathstoday,
+	numdeathstoday,
 FROM provinces
 ORDER BY 2,3
 
@@ -19,8 +19,8 @@ ORDER BY 2,3
 SELECT 
 	prname AS 'Province', 
 	date,
-    numtotal AS 'TotalCases',
-    numdeaths AS 'TotalDeaths'
+	numtotal AS 'TotalCases',
+	numdeaths AS 'TotalDeaths'
 FROM provinces
 ORDER BY 2,3
 
@@ -28,8 +28,8 @@ ORDER BY 2,3
 
 SELECT 
 	prname AS 'Province',
-    date,
-    numtotal AS 'HighestCaseCount'
+	date,
+	numtotal AS 'HighestCaseCount'
 FROM provinces
 ORDER BY HighestCaseCount DESC
 
@@ -38,9 +38,9 @@ ORDER BY HighestCaseCount DESC
 SELECT 
 	prname AS 'Province', 
 	date,
-    numtotal AS 'TotalCases',
-    numdeaths AS 'TotalDeaths',
-    (numdeaths/numtotal)*100 AS 'DeathPercentage'
+	numtotal AS 'TotalCases',
+	numdeaths AS 'TotalDeaths',
+	(numdeaths/numtotal)*100 AS 'DeathPercentage'
 FROM provinces
 WHERE prname LIKE 'Ontario%'
 ORDER BY 2,3
@@ -50,7 +50,7 @@ ORDER BY 2,3
 SELECT 
 	prname AS 'Province', 
 	date,
-    numdeaths AS 'TotalDeaths'
+	numdeaths AS 'TotalDeaths'
 FROM provinces
 ORDER BY TotalDeaths DESC
 
@@ -59,9 +59,9 @@ ORDER BY TotalDeaths DESC
 
 SELECT
 	prname AS 'Province',
-    date,
-    numtoday AS 'NewCasesToday',
-    numdeathstoday AS 'NewDeathsToday'
+	date,
+	numtoday AS 'NewCasesToday',
+	numdeathstoday AS 'NewDeathsToday'
 FROM provinces
 ORDER BY date DESC, Province
 
@@ -69,9 +69,9 @@ ORDER BY date DESC, Province
 
 SELECT
 	prname AS 'Province',
-    p.date,
-    p.numtotal AS 'ProvinceTotalCases',
-    c.total_cases AS 'CanadaTotalCases'
+	p.date,
+	p.numtotal AS 'ProvinceTotalCases',
+	c.total_cases AS 'CanadaTotalCases'
 FROM provinces p
 JOIN canada c
 	ON p.date = c.date
@@ -82,10 +82,10 @@ ORDER BY p.date DESC, Province
 
 SELECT
 	prname AS 'Province',
-    p.date,
-    p.numdeaths AS 'ProvinceTotalDeaths',
-    c.total_deaths AS 'CanadaTotalDeaths',
-    (p.numdeaths/c.total_deaths)*100 AS 'PercentageOfTotalDeaths'
+	p.date,
+	p.numdeaths AS 'ProvinceTotalDeaths',
+	c.total_deaths AS 'CanadaTotalDeaths',
+	(p.numdeaths/c.total_deaths)*100 AS 'PercentageOfTotalDeaths'
 FROM province p
 JOIN canada c
 	ON p.date = c.date
