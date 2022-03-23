@@ -4,7 +4,7 @@ Calculating and comparing covid statistics across Canadian Provinces
 
 # Data Cleaning
 
-All data are cleaned in Excel prior to importing into MySQL Database
+All data are cleaned in Excel prior to being imported into MySQL Database
 
 # References
 
