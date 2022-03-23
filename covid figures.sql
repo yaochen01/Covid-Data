@@ -1,6 +1,7 @@
+-- Select the data we are going to be using
+
 USE covid_canada;
 
--- Select the data we are going to be using
 -- Order by province and date
 
 SELECT 
