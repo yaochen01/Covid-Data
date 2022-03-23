@@ -34,7 +34,7 @@ SELECT
 FROM provinces
 ORDER BY HighestCaseCount DESC
 
--- Looking at the likelihood of dying if you contract covid in Ontario (province that had the most cases
+-- Looking at the likelihood of dying if you contract covid in Ontario (the province that currently has the most cases)
 
 SELECT 
 	prname AS 'Province', 
