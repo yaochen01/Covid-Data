@@ -98,4 +98,14 @@ SELECT *
 FROM provinces
 WHERE date < '1/1/2022'
 
+-- Added DeathStats column to show when provinces reached 10000 deaths
 
+SELECT
+	prname AS 'Provinces',
+    	date,
+    	numdeaths,
+    	CASE WHEN numdeaths > 10000 THEN 'Deaths exceed 10000'
+	WHEN numdeaths = 10000 THEN 'Reached 10000 deaths'
+	ELSE 'Deaths under 10000'
+	END AS DeathStats
+FROM provinces
